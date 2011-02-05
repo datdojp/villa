@@ -5,15 +5,19 @@
 
 <faces-config>
 	<navigation-rule>
-		<from-view-id>/pages/inputname.jsp</from-view-id>
+		<from-view-id>/pages/season/SeasonManagement.jsp</from-view-id>
 		<navigation-case>
-			<from-outcome>greeting</from-outcome>
-			<to-view-id>/pages/greeting.jsp</to-view-id>
+			<from-outcome></from-outcome>
+			<to-view-id>/pages/.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<managed-bean>
-		<managed-bean-name>personBean</managed-bean-name>
-		<managed-bean-class>jsfks.PersonBean</managed-bean-class>
+		<managed-bean-name>seasonBean</managed-bean-name>
+		<managed-bean-class>villa.bean.season.SeasonBean</managed-bean-class>
 		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>seasonService</property-name>
+			<value>#{seasonService}</value>
+		</managed-property>
 	</managed-bean>
 </faces-config>
