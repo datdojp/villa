@@ -5,10 +5,10 @@
 
 <faces-config>
 	<navigation-rule>
-		<from-view-id>/pages/season/SeasonManagement.jsp</from-view-id>
+		<from-view-id>/pages/season/SeasonList.jsp</from-view-id>
 		<navigation-case>
-			<from-outcome></from-outcome>
-			<to-view-id>/pages/.jsp</to-view-id>
+			<from-outcome>edit</from-outcome>
+			<to-view-id>/pages/season/SeasonDetail.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<managed-bean>
