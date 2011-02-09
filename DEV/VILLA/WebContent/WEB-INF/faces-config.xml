@@ -1,20 +1,25 @@
-<?xml version="1.0"?>
-<!DOCTYPE faces-config PUBLIC
-  "-//Sun Microsystems, Inc.//DTD JavaServer Faces Config 1.1//EN"
-  "http://java.sun.com/dtd/web-facesconfig_1_1.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+	version="2.0">
+	<application>
+		<el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>
+	</application>
 
-<faces-config>
+ 	<!-- 
 	<navigation-rule>
 		<from-view-id>/pages/season/SeasonList.jsp</from-view-id>
 		<navigation-case>
-			<from-outcome>edit</from-outcome>
+			<from-outcome>detail</from-outcome>
 			<to-view-id>/pages/season/SeasonDetail.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+	-->
 	<managed-bean>
 		<managed-bean-name>seasonBean</managed-bean-name>
 		<managed-bean-class>villa.bean.season.SeasonBean</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 		<managed-property>
 			<property-name>seasonService</property-name>
 			<value>#{seasonService}</value>
