@@ -8,6 +8,6 @@
 			<ref bean="sessionFactory"/>
 		</property>
 	</bean>
-	<bean id="seasonDao" class="villa.dao.SeasonDao" parent="baseDao">
+	<bean id="seasonDao" class="villa.dao.season.SeasonDaoImpl" parent="baseDao">
 	</bean>
 </beans>		

@@ -19,4 +19,12 @@ public class SeasonBean extends BaseBean {
 	public List<SeasonDto> getAllSeasons() {
 		return m_seasonService.getAllSeasons();
 	}
+	
+	public SeasonDto getASeason() {
+		return m_seasonService.getAllSeasons().get(0);
+	}
+	
+	public String getSomething() {
+		return "This is a static text";
+	}
 }

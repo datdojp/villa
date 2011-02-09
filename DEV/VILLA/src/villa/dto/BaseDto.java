@@ -4,10 +4,12 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
+@MappedSuperclass
 public class BaseDto {
-	@Id @GeneratedValue(strategy=GenerationType.SEQUENCE, generator="SEQ_STORE")
+	@Id @GeneratedValue
 	@Column(name="id")
 	private Integer m_id;
 	

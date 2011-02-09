@@ -1,5 +1,5 @@
 <html>
 <body>
-	<jsp:forward page="SeasonList.jsf"/>
+	<jsp:forward page="/pages/season/SeasonList.jsp"/>
 </body>
 </html>
