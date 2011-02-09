@@ -1,6 +1,10 @@
-<jsp:include page="../common/include.jsp"></jsp:include>
+
+<%@ taglib uri="http://java.sun.com/jsf/core" prefix="f" %>
+<%@ taglib uri="http://java.sun.com/jsf/html" prefix="h" %>
+
 <html>
 <body>
+<h:outputText value="#{seasonBean.something}" style="font-weight:bold" />
 <h:dataTable id="table1" value="#{seasonBean.allSeasons}" var="season">
 	<f:facet name="header" />
 	<h:column>
