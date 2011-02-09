@@ -1,14 +1,14 @@
 package villa.dto;
 
+import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 @MappedSuperclass
-public class BaseDto {
+public class BaseDto implements Serializable {
 	@Id @GeneratedValue
 	@Column(name="id")
 	private Integer m_id;

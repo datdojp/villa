@@ -14,6 +14,12 @@ public class SeasonDaoImpl extends BaseDao implements SeasonDao {
 		aSeason.setBeginYear(2010);
 		aSeason.setEndYear(2011);
 		result.add(aSeason);
+		
+		SeasonDto bSeason = new SeasonDto();
+		bSeason.setBeginYear(2010);
+		bSeason.setEndYear(2011);
+		result.add(bSeason);
+		
 		return result;
 	}
 	
