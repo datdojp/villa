@@ -1,11 +1,16 @@
 package villa.bean.season;
 
 import java.util.List;
+
+import org.apache.log4j.Logger;
+
 import villa.bean.BaseBean;
 import villa.dto.SeasonDto;
 import villa.service.season.SeasonService;
 
 public class SeasonBean extends BaseBean {
+	private static Logger m_logger = Logger.getLogger(SeasonBean.class);
+	
 	private SeasonService m_seasonService;
 
 	public SeasonService getSeasonService() {
@@ -17,6 +22,7 @@ public class SeasonBean extends BaseBean {
 	}
 	
 	public List<SeasonDto> getAllSeasons() {
+		m_logger.info("***print all seasons");
 		return m_seasonService.getAllSeasons();
 	}
 	
@@ -25,6 +31,7 @@ public class SeasonBean extends BaseBean {
 	}
 	
 	public String getSomething() {
+		m_logger.info("***print static text");
 		return "This is a static text";
 	}
 }
