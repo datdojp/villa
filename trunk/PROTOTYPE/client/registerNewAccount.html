@@ -1,0 +1,48 @@
+<html>
+<body>
+<script src="jquery-1.4.4.min.js"></script>
+<script src="jquery-ui-1.8.9.custom.min.js"></script>
+<table id="layoutTable" border="1">
+	<tr>
+		<td colspan="3">
+			<script src="header.js"></script>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<script src="menubar.js"></script>			
+		</td>
+	</tr>
+	<tr>
+		<td><script src="leftpane.js"></script></td>
+		<td>
+Fullname<input type="text"/><br>
+Username<input type="text"/><br>
+Password<input type="password"/><br>
+Confirm password<input type="password"/><br>
+Email<input type="text"/><br>
+Confirm email<input type="text"/><br>
+Phone number<input type="text"/><br>
+Bank account number<input type="text"/><br>
+Bank type
+<select>
+  <option>Visa card</option>
+  <option>Smartlink</option>
+  <option>Direct transfer</option>
+</select><br>
+Date of birth<input id="dateOfBirth" type="text"/><br>
+<button onclick="location.href='registerDone.html';">Register</button>
+<script>
+	$("#dateOfBirth").datepicker();
+</script>
+</td>
+		<td><script src="rightpane.js"></script></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<script src="footer.js"></script>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
