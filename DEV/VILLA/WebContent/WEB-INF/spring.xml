@@ -3,6 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="location">
+			<value>classpath:configurations.properties</value>
+		</property>
+	</bean>
+	
 	<import resource="configurations/hibernate.xml"/>
 	<import resource="configurations/dao.xml"/>
 	<import resource="configurations/service.xml"/>
