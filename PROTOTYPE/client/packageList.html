@@ -1,0 +1,92 @@
+<html>
+<body>
+<script src="jquery-1.4.4.min.js"></script>
+<script src="jquery-ui-1.8.9.custom.min.js"></script>
+<table id="layoutTable" border="1">
+	<tr>
+		<td colspan="3">
+			<script src="header.js"></script>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<script src="menubar.js"></script>			
+		</td>
+	</tr>
+	<tr>
+		<td><script src="leftpane.js"></script></td>
+		<td>
+<script src="balanceinfo.js"></script>
+<br>
+<style>
+	.amount {
+		
+	}
+	.amount input {
+		width: 30px;
+	}
+</style>
+<table border="1">
+	<tr style='font-weight:bold;'>
+		<td>Type</td>
+		<td>No of predictions</td>
+		<td>Price</td>
+		<td>Amount</td>
+	</tr>
+	<tr>
+		<td>King</td>
+		<td>10</td>
+		<td>$100</td>
+		<td class='amount'>
+			<button>&lt;</button>
+			<input type="text" value="1"/>
+			<button>&gt;</button>
+		</td>
+	</tr>
+	<tr>
+		<td>King</td>
+		<td>20</td>
+		<td>$190</td>
+		<td class='amount'>
+			<button>&lt;</button>
+			<input type="text" value="0"/>
+			<button>&gt;</button>
+		</td>
+	</tr>
+	<tr>
+		<td>Occean</td>
+		<td>10</td>
+		<td>$150</td>
+		<td class='amount'>
+			<button>&lt;</button>
+			<input type="text" value="2"/>
+			<button>&gt;</button>
+		</td>
+	</tr>
+	<tr>
+		<td>Occean</td>
+		<td>20</td>
+		<td>$290</td>
+		<td class='amount'>
+			<button>&lt;</button>
+			<input type="text" value="0"/>
+			<button>&gt;</button>
+		</td>
+	</tr>
+</table>
+<br>
+Total: $400
+<br>
+<button onclick="location.href='buyPackageDone.html'">Buy</button>
+		
+		</td>
+		<td><script src="rightpane.js"></script></td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<script src="footer.js"></script>
+		</td>
+	</tr>
+</table>
+</body>
+</html>
