@@ -16,27 +16,30 @@
 	<tr>
 		<td><script src="leftpane.js"></script></td>
 		<td>
-<script src='balanceinfo.js'></script>
+This function allows you to notify administrator that you have transfer money to his bank account.
 <br>
+Date<input type='text' id="datetime"/>Hour:<input type='text' style='width:20px'/>Min:<input type='text' style='width:20px'/>
+<script>
+	$("#datetime").datepicker();
+</script>
 <br>
-Fullname<input type="text" value='Do Van Tien Dat'/><br>
-Email<input type="text" value='datdvt@gmail.com'/><br>
-Confirm email<input type="text" value='datdvt@gmail.com'/><br>
-Phone number<input type="text" value='0988959400'/><br>
+Account number<input type='text'/>
+<br>
+Tranferer<input type='text' value='Do Van Tien Dat'/>
+<br>
 Bank account number<input type="text" value='1234567'/><br>
+<br>
 Bank type
 <select>
   <option>Visa card</option>
   <option>Smartlink</option>
   <option>Direct transfer</option>
 </select><br>
-Date of birth<input id="dateOfBirth" type="text" value='02/21/2011'/><br>
-<button onclick="location.href='editProfileDone.html';">Change</button>
-<a href="changePassword.html">Change password</a>
-<script>
-	$("#dateOfBirth").datepicker();
-</script>
-</td>
+Amount: $<input type='text'/>
+<br>
+<button onclick='location.href="notifyDone.html"'>Notify</button>
+		
+		</td>
 		<td><script src="rightpane.js"></script></td>
 	</tr>
 	<tr>

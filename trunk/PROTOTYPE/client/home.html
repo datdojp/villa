@@ -1,4 +1,4 @@
-<html>
+﻿<html>
 <body>
 <script src="jquery-1.4.4.min.js"></script>
 <script src="jquery-ui-1.8.9.custom.min.js"></script>
@@ -16,7 +16,146 @@
 	<tr>
 		<td><script src="leftpane.js"></script></td>
 		<td>
-</td>
+Select season
+<select>
+	<option>All</option>
+	<option>2010-2011</option>
+	<option>2011-2012</option>
+</select>
+Select tournament
+<select>
+  <option>All</option>
+  <option>Champain Leage</option>
+  <option>V-leage</option>
+  <option>Asian cup</option>
+</select>
+<br>
+From date<input id="fromdate" type="text"/>
+To date<input id="todate" type="text"/>
+<script>
+	$("#fromdate").datepicker();
+	$("#todate").datepicker();
+</script>
+<br>
+<button>Search</button>
+<br><br>
+<script src='balanceinfo.js'></script>
+<br><br>
+<table border='1'>
+	<tr style='font-weight:bold;'>
+		<td>Host team</td>
+		<td>Guest team</td>
+		<td>Handicap</td>
+		<td>Date time</td>
+		<td>Price type</td>
+		<td>Prediction type</td>
+		<td>Winner</td>
+		<td>Total score</td>
+		<td>Over/lower</td>
+		<td>Result</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td>Manchester United</td>
+		<td>Chelsea</td>
+		<td>1/2-0</td>
+		<td>19:00 Feb 12, 2010</td>
+		<td>King</td>
+		<td>Winner</td>
+		<td>Manchester United</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td><button onclick='confirmBuyView()'>Buy</button></td>
+	</tr>
+	<tr>
+		<td>Vietnam</td>
+		<td>Thailand</td>
+		<td>4 1/2-0</td>
+		<td>19:30 Feb 13, 2010</td>
+		<td>Free</td>
+		<td>Over/lower</td>
+		<td>-</td>
+		<td>10</td>
+		<td>Over</td>
+		<td>-</td>
+		<td><button onclick='confirmBuyView()'>View</button></td>
+	</tr>
+	<tr>
+		<td>Villa</td>
+		<td>Ailato</td>
+		<td>1/2-0</td>
+		<td>19:00 Feb 12, 2010</td>
+		<td>King</td>
+		<td>Winner</td>
+		<td>Ailato</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td><button onclick='confirmBuyView()'>Buy</button></td>
+	</tr>
+	<tr>
+		<td>Barca</td>
+		<td>Real Madrid</td>
+		<td>1/2-0</td>
+		<td>20:00 Feb 14, 2010</td>
+		<td>Occean</td>
+		<td>Winner</td>
+		<td>Real Madrid</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>Not enough money</td>
+	</tr>
+	<tr>
+		<td>Inter miland</td>
+		<td>HAGL FC</td>
+		<td>0-1 1/2</td>
+		<td>18:30 March 20, 2010</td>
+		<td>King</td>
+		<td>Over/lower</td>
+		<td>-</td>
+		<td>4</td>
+		<td>Lower</td>
+		<td>WIN</td>
+		<td>Ended</td>
+	</tr>
+	<tr>
+		<td>Arab Saudi</td>
+		<td>Japan</td>
+		<td>0-2 1/2</td>
+		<td>19:00 March 20, 2010</td>
+		<td>Occean</td>
+		<td>Winner</td>
+		<td>Japan</td>
+		<td>-</td>
+		<td>-</td>
+		<td>DRAW</td>
+		<td>Ended</td>
+	</tr>
+</table>
+<a href="">FIRST</a>
+<a href="">previous</a>
+-page
+<select>
+	<option>1</option>
+	<option>2</option>
+	<option>3</option>
+	<option>4</option>
+	<option>5</option>
+</select>
+/5-
+<a href="">next</a>
+<a href="">LAST</a>
+<script>
+	function confirmBuyView() {
+		if(confirm("Do you want to buy/view the prediction?")) {
+			location.href='predictionDetail.html';
+		}
+	}
+</script>
+
+		</td>
 		<td><script src="rightpane.js"></script></td>
 	</tr>
 	<tr>
