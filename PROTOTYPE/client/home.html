@@ -30,16 +30,44 @@ Select tournament
   <option>Asian cup</option>
 </select>
 <br>
-From date<input id="fromdate" type="text"/>
-To date<input id="todate" type="text"/>
-<script>
-	$("#fromdate").datepicker();
-	$("#todate").datepicker();
-</script>
+Select team 1
+<select>
+  <option>All</option>
+  <option>Manchester United</option>
+  <option>HAGL FC</option>
+  <option>Japan</option>
+</select>
+Select team 2
+<select>
+  <option>All</option>
+  <option>Manchester United</option>
+  <option>HAGL FC</option>
+  <option>Japan</option>
+</select>
+<br>
+Price type
+<select>
+	<option>All</option>
+	<option>Free</option>
+	<option>King</option>
+	<option>Occean</option>
+</select>
+Prediction type
+<select>
+	<option>All</option>
+	<option>Winner</option>
+	<option>Over/lower</option>
+</select>
+<br>
+<script src='datefilter.js'></script>
 <br>
 <button>Search</button>
 <br><br>
 <script src='balanceinfo.js'></script>
+<br>
+King: $10/prediction
+<br>
+Occean: $20/prediction
 <br><br>
 <table border='1'>
 	<tr style='font-weight:bold;'>
@@ -79,7 +107,7 @@ To date<input id="todate" type="text"/>
 		<td>10</td>
 		<td>Over</td>
 		<td>-</td>
-		<td><button onclick='confirmBuyView()'>View</button></td>
+		<td><button onclick='location.href="predictionDetail.html"'>View</button></td>
 	</tr>
 	<tr>
 		<td>Villa</td>
@@ -118,7 +146,7 @@ To date<input id="todate" type="text"/>
 		<td>4</td>
 		<td>Lower</td>
 		<td>WIN</td>
-		<td>Ended</td>
+		<td>Bought</td>
 	</tr>
 	<tr>
 		<td>Arab Saudi</td>
@@ -134,19 +162,7 @@ To date<input id="todate" type="text"/>
 		<td>Ended</td>
 	</tr>
 </table>
-<a href="">FIRST</a>
-<a href="">previous</a>
--page
-<select>
-	<option>1</option>
-	<option>2</option>
-	<option>3</option>
-	<option>4</option>
-	<option>5</option>
-</select>
-/5-
-<a href="">next</a>
-<a href="">LAST</a>
+<script src='paging.js'></script>
 <script>
 	function confirmBuyView() {
 		if(confirm("Do you want to buy/view the prediction?")) {
