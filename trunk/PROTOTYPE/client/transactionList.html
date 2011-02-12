@@ -16,10 +16,182 @@
 	<tr>
 		<td><script src="leftpane.js"></script></td>
 		<td>
-TODO
-		
-		
-		
+
+<button onclick='generalClick()'>General</button>
+<button onclick='transferDrawClick()'>Transfer/Draw</button>
+<button onclick='buyPredictionsClick()'>Buy predictions</button>
+<button onclick='buyPackagesClick()'>Buy package</button>
+<script>
+	function generalClick() {
+		$("#divGeneral").show();
+		$("#divTransferDraw").hide();
+		$("#divPredictions").hide();
+		$("#divPackage").hide();
+	}
+	function transferDrawClick() {
+		$("#divGeneral").hide();
+		$("#divTransferDraw").show();
+		$("#divPredictions").hide();
+		$("#divPackage").hide();
+	}
+	function buyPredictionsClick() {
+		$("#divGeneral").hide();
+		$("#divTransferDraw").hide();
+		$("#divPredictions").show();
+		$("#divPackage").hide();
+	}
+	function buyPackagesClick() {
+		$("#divGeneral").hide();
+		$("#divTransferDraw").hide();
+		$("#divPredictions").hide();
+		$("#divPackage").show();
+	}
+</script>
+<br>
+<script src='datefilter.js'></script>
+<button>Search</button>
+<br>
+<div id="divGeneral">
+	<table border='1'>
+		<tr style='font-weight:bold'>
+			<td>Date time</td>
+			<td>Type</td>
+			<td>Amount</td>
+			<td>Result</td>
+		</tr>
+		<tr>
+			<td>Feb 11, 2010 - 20:00</td>
+			<td>Draw</td>
+			<td>$1000</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Feb 06, 2010 - 20:00</td>
+			<td>Buy predictions</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Feb 05, 2010 - 20:00</td>
+			<td>Buy predictions</td>
+			<td>-</td>
+			<td>WIN</td>
+		</tr>
+		<tr>
+			<td>Feb 04, 2010 - 20:10</td>
+			<td>Buy package</td>
+			<td>$300</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Feb 04, 2010 - 20:05</td>
+			<td>Buy package</td>
+			<td>$100</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Feb 03, 2010 - 20:00</td>
+			<td>Buy predictions</td>
+			<td>$10</td>
+			<td>DRAW</td>
+		</tr>
+		<tr>
+			<td>Feb 01, 2010 - 19:15</td>
+			<td>Transfer</td>
+			<td>$5000</td>
+			<td>-</td>
+		</tr>
+	</table>
+</div>
+<div id="divTransferDraw" style='display:none'>
+	<table border='1'>
+		<tr style='font-weight:bold'>
+			<td>Date time</td>
+			<td>Type</td>
+			<td>Amount</td>
+			<td>Actual amount</td>
+			<td>Transferer/Drawer</td>			
+			<td>Bank acc no</td>
+			<td>Bank type</td>
+			<td>Date of confirmation</td>
+		</tr>
+		<tr>
+			<td>Feb 11, 2010 - 20:00</td>
+			<td>Draw</td>
+			<td>$1000</td>
+			<td>$1000</td>
+			<td>Do Van Tien Dat</td>			
+			<td>1234567</td>
+			<td>Smartlink</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Feb 01, 2010 - 19:15</td>
+			<td>Transfer</td>
+			<td>$5000</td>
+			<td>$4500</td>
+			<td>Nguyen Cao Vu</td>
+			<td>7654321</td>
+			<td>Visa card</td>
+			<td>Feb 01, 2010 - 11:59</td>
+		</tr>
+	</table>
+</div>
+<div id="divPredictions" style='display:none'>
+	<table border='1'>
+		<tr>
+			<td>Date time</td>
+			<td>Type</td>
+			<td>Amount</td>
+			<td>Result</td>
+		</tr>
+		<tr>
+			<td>Feb 06, 2010 - 20:00</td>
+			<td>King</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>Feb 05, 2010 - 20:00</td>
+			<td>Occean</td>
+			<td>-</td>
+			<td>WIN</td>
+		</tr>
+		<tr>
+			<td>Feb 03, 2010 - 20:00</td>
+			<td>King</td>
+			<td>$10</td>
+			<td>DRAW</td>
+		</tr>
+	</table>
+</div>
+<div id="divPackage" style='display:none'>
+	<table border='1'>
+		<tr>
+			<td>Date time</td>
+			<td>Type</td>
+			<td>No of predictions</td>
+			<td>Price</td>
+			<td>Amount</td>
+		</tr>
+		<tr>
+			<td>Feb 04, 2010 - 20:10</td>
+			<td>Occean</td>
+			<td>10</td>
+			<td>$150</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>Feb 04, 2010 - 20:05</td>
+			<td>King</td>
+			<td>10</td>
+			<td>$100</td>
+			<td>1</td>
+		</tr>
+	</table>
+</div>
+<br>
+<script src='paging.js'></script>
 		</td>
 		<td><script src="rightpane.js"></script></td>
 	</tr>
