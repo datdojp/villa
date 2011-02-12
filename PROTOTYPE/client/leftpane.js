@@ -10,6 +10,8 @@ document.write(
 		"<br>",
 		"<button onclick='location.href=\"transactionList.html\"'>All transaction</button>",
 		"<br>",
+		"<button onclick='location.href=\"statistics.html\"'>Statistics</button>",
+		"<br>",
 		"<br>",
 		"SUPPORTERS",
 		"<br>",
