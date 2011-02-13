@@ -1,0 +1,53 @@
+<html>
+<body>
+	<script src="jquery-1.4.4.min.js"></script>
+	<script src="jquery-ui-1.8.9.custom.min.js"></script>
+	<script src='header.js'></script>
+	Season
+	<select>
+		<option></option>
+		<option>2009-2010</option>
+		<option>2010-2011</option>
+	</select>
+	<br>
+	Tournament
+	<select>
+		<option></option>
+		<option>Champain League</option>
+		<option>V-League</option>
+		<option>Worlcup</option>
+		<option>Asian Cup</option>		
+		<option>J-League</option>
+	</select>
+	<br>
+	Host team
+	<select>
+		<option></option>
+		<option>Manchester United</option>
+		<option>Barca</option>
+		<option>Real Mandrid</option>
+		<option>Inter Milan</option>
+	</select>
+	<br>
+	Guest team
+	<select>
+		<option></option>
+		<option>Manchester United</option>
+		<option>Barca</option>
+		<option>Real Mandrid</option>
+		<option>Inter Milan</option>
+	</select>
+	<br>
+	Handicap<input style='width:30px;' type='text'/>-<input style='width:30px;' type='text'/>
+	<br>
+	Date<input type='text' id="datetime"/>
+	Hour:<input type='text' style='width:30px'/>
+	Min:<input type='text' style='width:30px'/>
+	<script>
+		$("#datetime").datepicker();
+	</script>
+	<br>
+	<button onclick='location.href="matchList.html"'>Create</button>
+	<script src='footer.js'></script>
+</body>
+</html>

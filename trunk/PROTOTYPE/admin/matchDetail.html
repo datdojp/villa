@@ -1,0 +1,143 @@
+<html>
+<body>
+	<script src="jquery-1.4.4.min.js"></script>
+	<script src="jquery-ui-1.8.9.custom.min.js"></script>
+	<script src='header.js'></script>
+	Season
+	<select>
+		<option>2009-2010</option>
+		<option>2010-2011</option>
+	</select>
+	<br>
+	Tournament
+	<select>
+		<option>Champain League</option>
+		<option>V-League</option>
+		<option>Worlcup</option>
+		<option>Asian Cup</option>		
+		<option>J-League</option>
+	</select>
+	<br>
+	Host team
+	<select>
+		<option>Manchester United</option>
+		<option>Barca</option>
+		<option>Real Mandrid</option>
+		<option>Inter Milan</option>
+	</select>
+	<br>
+	Guest team
+	<select>
+		<option>Barca</option>
+		<option>Manchester United</option>		
+		<option>Real Mandrid</option>
+		<option>Inter Milan</option>
+	</select>
+	<br>
+	Handicap<input style='width:30px;' type='text' value='0.5'/>-<input style='width:30px;' type='text' value='0'/>
+	<br>
+	Date<input type='text' id="datetime" value='02/12/2010'/>
+	Hour:<input type='text' style='width:30px' value='19'/>
+	Min:<input type='text' style='width:30px' value='00'/>
+	<script>
+		$("#datetime").datepicker();
+	</script>
+	<br>
+	Final score<input type="text" value='1' style='width:30px'/>-<input type="text" value='0' style='width:30px'/>
+	<br>
+	<button onclick='location.href="matchList.html"'>Save</button>
+	<br>
+	<br>
+	<b>Predictions</b>
+	<br>
+	<button onclick='location.href="newPrediction.html"'>Create</button>
+	<button onclick='confirm("Are you sure?")'>Delete</button>
+	<table border='1'>
+		<tr style='font-weight:bold;'>
+			<td><input type='checkbox'/></td>			
+			<td>Begin-post date</td>
+			<td>End-post date</td>
+			<td>Price type</td>
+			<td>Prediction type</td>
+			<td>Winner</td>
+			<td>Total score</td>
+			<td>Over/lower</td>
+			<td>Result</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>19:00 Feb 11, 2010</td>
+			<td>19:00 Feb 12, 2010</td>
+			<td>King</td>
+			<td>Winner</td>
+			<td>Manchester United</td>
+			<td>-</td>
+			<td>-</td>
+			<td>WIN</td>
+			<td><button onclick='location.href="predictionDetail.html"'>Edit</button></td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>19:30 Feb 12, 2010</td>
+			<td>19:30 Feb 13, 2010</td>
+			<td>Free</td>
+			<td>Over/lower</td>
+			<td>-</td>
+			<td>10</td>
+			<td>Over</td>
+			<td>DRAW</td>
+			<td><button onclick='location.href="predictionDetail.html"'>Edit</button></td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>19:00 Feb 11, 2010</td>
+			<td>19:00 Feb 12, 2010</td>
+			<td>King</td>
+			<td>Winner</td>
+			<td>Ailato</td>
+			<td>-</td>
+			<td>-</td>
+			<td>WIN</td>
+			<td><button onclick='location.href="predictionDetail.html"'>Edit</button></td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>20:00 Feb 13, 2010</td>
+			<td>20:00 Feb 14, 2010</td>
+			<td>Occean</td>
+			<td>Winner</td>
+			<td>Real Madrid</td>
+			<td>-</td>
+			<td>-</td>
+			<td>LOOSE</td>
+			<td><button onclick='location.href="predictionDetail.html"'>Edit</button></td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>18:30 March 19, 2010</td>
+			<td>18:30 March 20, 2010</td>
+			<td>King</td>
+			<td>Over/lower</td>
+			<td>-</td>
+			<td>4</td>
+			<td>Lower</td>
+			<td>WIN</td>
+			<td><button onclick='location.href="predictionDetail.html"'>Edit</button></td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>			
+			<td>19:00 March 19, 2010</td>
+			<td>19:00 March 20, 2010</td>
+			<td>Occean</td>
+			<td>Winner</td>
+			<td>Japan</td>
+			<td>-</td>
+			<td>-</td>
+			<td>DRAW</td>
+			<td><button onclick='location.href="predictionDetail.html"'>Edit</button></td>
+		</tr>
+	</table>
+	<script src='footer.js'></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<body>
+	<script src='header.js'></script>
+	From<input type='text' value='2010'/><br>
+	To<input type='text' value='2011'/><br>
+	<button onclick="location.href='seasonList.html'">Save</button>
+	<br>
+	<br>
+	<b>Tournaments</b>
+	<br>
+	<button onclick='showTournamentListPopup()'>Add</button>
+	<script>
+		function showTournamentListPopup() {
+			window.open("popupTournamentList.html");
+		}
+	</script>
+	<button onclick="confirm('Are you sure?');">Remove</button>
+	<table border='1'>
+		<tr style='font-weight:bold'>
+			<td><input type='checkbox'/></td>
+			<td>Name</td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>Champain League</td>			
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>V-Leage</td>			
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>Worlcup</td>			
+		</tr>
+	</table>
+	<script src='footer.js'></script>
+</body>
+</html>
