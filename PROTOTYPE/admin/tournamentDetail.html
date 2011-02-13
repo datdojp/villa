@@ -1,0 +1,52 @@
+<html>
+<body>
+	<script src='header.js'></script>
+	Name <input type='text' value='Champion League'/>
+	<br>
+	<button onclick='location.href="tournamentList.html"'>Save</button>
+	<br>
+	<br>
+	<b>Teams</b>
+	<br>
+	Season
+	<select>
+		<option>2009-2010</option>
+		<option>2010-2011</option>
+	</select>
+	<br>
+	<button onclick='add()'>Add</button>
+	<script>
+		function add() {
+			window.open("popupTeamList.html");
+		}
+	</script>
+	<button onclick='confirm("Are you sure?");'>Remove</button>
+	<table border='1'>
+		<tr style='font-weight:bold'>
+			<td><input type='checkbox'/></td>
+			<td>Name</td>
+			<td>Logo</td>
+			<td>Country</td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>Barca</td>
+			<td><img src='barca.jpeg'/></td>
+			<td>Spain</td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>Manchester United</td>
+			<td><img src='mu.jpeg'/></td>
+			<td>England</td>
+		</tr>
+		<tr>
+			<td><input type='checkbox'/></td>
+			<td>Inter Milan</td>
+			<td><img src='inter.jpeg'/></td>
+			<td>Italia</td>
+		</tr>
+	</table
+	<script src='footer.js'></script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<html>
+<body>
+	<script src="jquery-1.4.4.min.js"></script>
+	<script src="jquery-ui-1.8.9.custom.min.js"></script>
+	<script src='header.js'></script>
+	Type
+	<select onchange='onchange()'>
+		<option id='winner'>Winner</option>
+		<option id='taixiu'>Over/lower</option>
+	</select>
+	<script>	
+		function onchange() {
+			if($("#winner").attr("selected")) {
+				onSelectWinner();
+			} else {
+				onSelectTaixiu();
+			}
+		}
+		function onSelectWinner() {
+		}
+		function onSelectTaixiu() {
+		}
+		onSelectWinner();
+	</script>
+	<br>
+	Begin post<input type='text' id="beginpost">
+	Hour:<input type='text' style='width:30px'/>
+	Min:<input type='text' style='width:30px'/>
+	<br>
+	End post<input type='text' id="endpost">
+	Hour:<input type='text' style='width:30px'/>
+	Min:<input type='text' style='width:30px'/>
+	<script>
+		$("#beginpost").datepicker();
+		$("#endpost").datepicker();
+	</script>
+	<br>
+	Price type
+	<select>
+		<option></option>
+		<option>Free</option>
+		<option>King</option>
+		<option>Occean</option>
+	</select>
+	<br>
+	Winner
+	<select id='winner'>
+		<option></option>
+		<option>Manchester United</option>
+		<option>Chelsea</option>
+	</select>
+	<br>
+	Over/lower
+	<select id='winner'>
+		<option></option>
+		<option>Over</option>
+		<option>Lower</option>
+	</select>
+	<br>
+	<script src='footer.js'></script>
+</body>
+</html>
