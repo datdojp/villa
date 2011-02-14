@@ -1,29 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"   
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core">
-
-<body>
-<f:view>
-<h:outputText value="#{msg.hello}" style="font-weight:bold" />
-<h:outputText value="#{seasonBean.something}" style="font-weight:bold" />
-<h:dataTable id="table1" value="#{seasonBean.allSeasons}" var="season">
-	<f:facet name="header" />
-	<h:column>
-		<f:facet name="header">
-			<h:outputText value="Begin year" />
-		</f:facet>
-		<h:outputText value="#{season.beginYear}" />
-	</h:column>
-	<h:column>
-		<f:facet name="header">
-			<h:outputText value="End year" />
-		</f:facet>
-		<h:outputText value="#{season.endYear}" />
-	</h:column>
-</h:dataTable>
-</f:view>
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:villa="http://www.ebet.com/jsf">
+<ui:composition template="../templates/admin.xhtml">
+	<ui:param name="title" value="Season List" />
+	<ui:define name="body">
+		<f:view>
+			<h:outputText value="#{msg.hello}" style="font-weight:bold" />
+			<h:outputText value="#{seasonBean.something}"
+				style="font-weight:bold" />
+			<villa:table seasonBean="#{seasonBean}"/>
+		</f:view>
+	</ui:define>
+</ui:composition>
 </html>

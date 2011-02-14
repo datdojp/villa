@@ -13,6 +13,10 @@
     <param-value>/WEB-INF/faces-config.xml</param-value>
   </context-param>
   <context-param>
+	<param-name>facelets.LIBRARIES</param-name>
+	<param-value>/pages/taglib/jsf-taglib.xml</param-value>
+  </context-param>
+  <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>/WEB-INF/spring.xml</param-value>
   </context-param>
@@ -48,7 +52,6 @@
 	<param-name>log4jRefreshInterval</param-name>
 	<param-value>1000</param-value>
   </context-param>
-
   <listener>
 	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
   </listener>
