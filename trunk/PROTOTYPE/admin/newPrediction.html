@@ -17,10 +17,13 @@
 			}
 		}
 		function onSelectWinner() {
+			$(".winner").show();
+			$(".overlower").hide();
 		}
 		function onSelectTaixiu() {
+			$(".winner").hide();
+			$(".overlower").show();
 		}
-		onSelectWinner();
 	</script>
 	<br>
 	Begin post<input type='text' id="beginpost">
@@ -43,20 +46,30 @@
 		<option>Occean</option>
 	</select>
 	<br>
-	Winner
-	<select id='winner'>
-		<option></option>
-		<option>Manchester United</option>
-		<option>Chelsea</option>
-	</select>
-	<br>
-	Over/lower
-	<select id='winner'>
-		<option></option>
-		<option>Over</option>
-		<option>Lower</option>
-	</select>
-	<br>
+	<div class='winner'>
+		Winner
+		<select>
+			<option></option>
+			<option>Manchester United</option>
+			<option>Chelsea</option>
+		</select>
+	</div>
+	<div class='overlower'>
+		Over/lower
+		<select class='overlower'>
+			<option></option>
+			<option>Over</option>
+			<option>Lower</option>
+		</select>
+		<br>
+		Total score
+		<input type='text' style='width:30px;' class='overlower'/>
+	</div>
+	<button onclick='location.href="matchDetail.html"'>Create</button>
+	<button onclick='location.href="matchDetail.html"'>Cancel</button>
+	<script>
+		onSelectWinner();
+	</script>
 	<script src='footer.js'></script>
 </body>
 </html>
