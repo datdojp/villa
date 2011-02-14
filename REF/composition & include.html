@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head>
+
+
+  <title>Faceletsのテンプレートと再利用性機能</title>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+</head><body>
+  <a href="http://homepage1.nifty.com/algafield/">[HOME]</a><a href="http://homepage1.nifty.com/algafield/jsf-fup.html">[JSFfollow-up]</a><br>
+  <h1>Facelets入門（第三回）テンプレートと再利用</h1>
+by Jacob  Hookom<br>
+03 Feb 2006 02:15 EST <br>
+<br>
+<a href="http://www.jsfcentral.com/articles/facelets_3.html">[原文]</a><br>
+<br>
+&nbsp;&nbsp;良質なビューテクノロジは、何らかのテンプレート機能と再利用機能を、使いやすく分かりやすい形で持っているべきです。
+Faceletsはこれらの機能をJavaServer 
+Facesのために実現し、それと同時に、以前からみんながよく知っている、タグを使ったユーザインタフェイスの感覚も保ちます。本稿は、
+JavaServer Facesを使ったプロジェクトの再利用性を増大し、メンテナンスを楽にする方法を説明します。<br>
+&nbsp;&nbsp;Webページを作りはじめると、複数のファイルで同じコンテンツを使うことが多いな、と気づきますね。そしてオブジェクト志向の
+考え方に馴染んでいるデベロッパは、コンテンツの再利用をもっと効率的にできないものか、と悩みます。そのコンテンツを一か所にだけ置けばよい方法は、な
+いだろうか？。<br>
+<br>
+<h2>では始めよう</h2>
+&nbsp;&nbsp;最初のやり方は、テンプレートを作ることです。どのWebページにも、ヘッダ、ボディ、フッタといった、共通の部分があります。Faceletsでは、そういう共通の成分を一つのページにまとめて、次のようなテンプレートを作れます：<br>
+<blockquote>
+  <pre><code>&lt;!-- template.xhtml --&gt;
+   &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+   &lt;html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:ui="http://java.sun.com/jsf/facelets"&gt;
+&lt;head&gt;
+   &lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /&gt;
+   &lt;title&gt;Sample Template&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   &lt;h1&gt;#{title}&lt;/h1&gt;
+   &lt;div&gt;&lt;ui:insert name="menu"/&gt;&lt;/div&gt;
+   &lt;p&gt;&lt;ui:insert name="body"/&gt;&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</blockquote>
+&nbsp;&nbsp;menuとbodyのための&lt;ui:insert/&gt;タグが、各ページごとに差し替わる部分を指定します。このテンプレートを使ってmenuとbodyを表示するページは、たとえば次のように書きます：<br>
+<blockquote>
+  <pre><code>&lt;!-- template-client.xhtml --&gt;
+   &lt;!-- content above will be trimmed --&gt;
+   &lt;ui:composition template="template.xhtml"&gt;
+     &lt;ui:param name="title" value="Here's my Title"/&gt;
+     &lt;ui:define name="menu"&gt;Here's My Menu&lt;/ui:define&gt;
+     &lt;ui:define name="body"&gt;Here's My Body&lt;/ui:define&gt;
+     &lt;/ui:composition&gt;
+   &lt;!-- content below will be trimmed --&gt;
+</code></pre>
+</blockquote>
+上のページ例は、&lt;ui:composition/&gt;というタグを使っています。このタグには、二つの機能があります。まず、このタグの前後
+にあるコンテンツをすべてトリミングします。ですから、ふつうのHTMLページを使った場合でも、Facelets
+は&lt;ui:composition/&gt;タグの中身だけを表示します。そしてこのタグのtemplate属性を使うと、コンテンツのレイアウト
+の方式やタイミングを指定できます。<br>
+&nbsp;&nbsp;このページと、さきほどのテンプレートを結びつけるために、テンプレートの&lt;ui:insert/&gt;とマッチする
+name属性で、&lt;ui:define/&gt;タグを使います。このページに単純にテンプレートの変数の値やテキストを渡すために
+は、&lt;ui:param/&gt;タグを使います。そのvalue属性で指定した値が、テンプレートの中の変数（title）の値として使われま
+す。<br>
+&nbsp;&nbsp;Faceletsがテンプレートを使ってこのページを表示するときには、こんな出力結果になります：<br>
+<blockquote>
+  <pre><code>&lt;!-- template.xhtml --&gt;
+   &lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"&gt;
+   &lt;html xmlns="http://www.w3.org/1999/xhtml" 
+   xmlns:ui="http://java.sun.com/jsf/facelets"&gt;
+&lt;head&gt;
+  &lt;meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /&gt;
+  &lt;title&gt;Sample Template&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+   &lt;h1&gt;Here's my Title&lt;/h1&gt;
+   &lt;div&gt;Here's My Menu&lt;/div&gt;
+   &lt;p&gt;Here's My Body&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+</blockquote>
+&nbsp;&nbsp;テンプレート中で、各ページごとの可変部分が一つだけの場合には、こんな簡単なテンプレートを使えます：<br>
+<blockquote>
+  <pre><code>&lt;!-- simple-template.xhtml --&gt;
+   ...
+&lt;body&gt;
+   &lt;h1&gt;Title&lt;/h1&gt;
+   &lt;!-- editable body --&gt;
+   &lt;p&gt;&lt;ui:insert/&gt;&lt;/p&gt;
+&lt;/body&gt;
+   ... 
+</code></pre>
+</blockquote>
+&nbsp;&nbsp;このテンプレートを使うページは、たとえばこのように書きます：<br>
+<blockquote>
+  <pre><code>&lt;!-- simple-template-client.xhtml --&gt;
+   &lt;ui:composition template="simple-template.xhtml"&gt;
+   Here's My Simple Body
+   &lt;/ui:composition&gt;
+</code></pre>
+</blockquote>
+<br>
+<h2>includeを使う</h2>
+&nbsp;&nbsp;上で見たcomposition（組み立て）方式は、Webページのコンテンツの再利用性を実現するための相当強力な方法です。
+上の例では、compositionの表示形式をテンプレートで指定しました。しかし、あるページでほかのページのcompositionを使いたいこと
+もありますね。それはたとえば、複数の部品から一つのFORMを組み立てるとか、複数のドキュメントの中にある要素を拾って複雑なメニューを組み立てる、
+という場合です。それを、シンプルですっきりとしたレイアウトでやりたいのです。<br>
+&nbsp;&nbsp;Faceletsには、ほかのページや、ほかのページにあるcompositionをインクルードする方法が二つあります。ひと
+つは、&lt;ui:include/&gt;タグです。このタグは、Webデベロッパにとってたいへん分かりやすいと思います：<br>
+<blockquote>
+  <pre><code>&lt;!-- include.xhtml --&gt;
+   ...
+   &lt;span id="leftNav"&gt;
+   &lt;ui:include src="/WEB-INF/siteNav.xhtml"/&gt;
+   &lt;/span&gt;
+   ...
+
+&lt;!-- siteNav.xhtml --&gt;
+   ..
+   &lt;ui:composition&gt;
+   &lt;!-- myfaces tomahawk components --&gt;
+   &lt;t:tree2 value="#{backingBean.options}" var="opt"&gt;
+   ...
+   &lt;/t:tree2&gt;
+   &lt;/ui:composition&gt;
+   ...
+</code></pre>
+</blockquote>
+&nbsp;&nbsp;Faceletsがこのinclude.xhmlを処理すると、siteNav.xhtml
+の&lt;ui:composition/&gt;タグのコンテンツがすべて、include.xhmlにインクルードされます。その結果は、こうなりま
+す：<br>
+<blockquote>
+  <pre><code>&lt;!-- include.xhtml --&gt;
+   ...
+ &lt;span id="leftNav"&gt;
+   &lt;!-- myfaces tomahawk components --&gt;
+   &lt;t:tree2 value="#{backingBean.options}" var="opt"&gt;
+   ...
+   &lt;/t:tree2&gt;
+ &lt;/span&gt;
+ ...
+</code></pre>
+</blockquote>
+&nbsp;&nbsp;ツリーコンポーネントの中で使う変数をsiteNav.xhtmlに渡したいときは、次のように、&lt;ui:param/&gt;タグを使います：<br>
+<blockquote>
+  <pre><code>&lt;!-- include.xhtml --&gt;
+   ...
+ &lt;span id="leftNav"&gt;
+   &lt;ui:include src="/WEB-INF/siteNav.xhtml"&gt;
+   &lt;ui:param name="menuBean" value="#{backingBean.options}"/&gt;
+   &lt;/ui:include&gt;
+ &lt;/span&gt;
+ ...
+
+&lt;!-- siteNav.xhtml --&gt;
+   ...
+   &lt;ui:composition&gt;
+   &lt;!-- myfaces tomahawk components --&gt;
+   &lt;t:tree2 value="#{menuBean}" var="opt"&gt;
+   ...
+   &lt;/t:tree2&gt;
+   &lt;/ui:composition&gt;
+   ...
+</code></pre>
+</blockquote>
+&nbsp;&nbsp;そうすると、インクルードされたsiteNav.xhtmlはmenuBeanという変数の実際の値
+が&lt;ui:include/&gt;タグの中で渡されている、と見なします。このやり方（変数名とその実値に分けるやり方）だと、共通的なコンポー
+ネントやコンテンツの再利用に、柔軟性を持たせることができます。<br>
+&nbsp;&nbsp;Faceletsでは、カスタムタグを使って、&lt;ui:include/&gt;と&lt;ui:param/&gt;
+を、もっとすっきりした形で利用できます。ただし、ご心配なく。Javaのコードは１行も書く必要がありません。siteNav.xhtmlをタグ化する
+ためには、次のような簡単なtaglibファイルをXMLで書くだけです：<br>
+<blockquote>
+  <pre><code>&lt;facelet-taglib&gt;
+   &lt;namespace&gt;"http://www.mycompany.com/jsf"&lt;/namespace&gt;
+   &lt;tag&gt;
+   &lt;tag-name&gt;siteNav.xhtml&lt;/tag-name&gt;
+   &lt;source&gt;/WEB-INF/tags/siteNav.xhtml&lt;/source&gt;
+   &lt;/tag&gt;
+&lt;/facelet-taglib&gt;
+</code></pre>
+</blockquote>
+&nbsp;&nbsp;ご覧のように、この新たに書いたtaglibファイルの中では、インクルードするFaceletsを指定しているだけです。この
+taglibの中で、タグをいくつでも定義できます。http://wwww.mycompany.com/jsfというネームスペースを指定すると、タ
+グをこのように使えます：<br>
+<blockquote>
+  <pre><code>&lt;!-- include-tag.xhtml --&gt;
+&lt;html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:my="http://www.mycompany.com/jsf"&gt;
+...
+
+&lt;span id="leftNav"&gt;
+   &lt;my:siteNav menuBean="#{backingBean.options}"/&gt;
+&lt;/span&gt;
+...
+</code></pre>
+</blockquote>
+&nbsp;&nbsp;このinclude-tag.xhtmlの出力は、さっきのinclude.xhtmlと同じです。menuBeanという属性は、&lt;ui:param/&gt;の場合と同じく、siteNav.xhtmlの中の属性を指しています。<br>
+&nbsp;&nbsp;本格的なプロジェクトでは、大量のタスタムタグを集めたライブラリを作って、それをアプリケーションJARファイルに収め、そのWebアプリケーション用のフォルダに置くだけでそれらのタグを使えます。タグについては、<a href="https://facelets.dev.java.net/nonav/docs/dev/docbook.html#template">Faceletsのデベロッパ向けドキュメンテーション</a>にさらに詳しく書かれています。<br>
+<br>
+--第三回終わり--<br><br>
+  <a href="http://homepage1.nifty.com/algafield/">[HOME]</a><a href="http://homepage1.nifty.com/algafield/jsf-fup.html">[JSFfollow-up]</a><br>
+  <br>
+</body></html>
