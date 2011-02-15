@@ -13,7 +13,7 @@ document.write([
 				"<button onclick='location.href=\"tournamentList.html\"'>Tournaments</button><br>",
 				"<button onclick='location.href=\"teamList.html\"'>Teams</button><br>",
 				"<button onclick='location.href=\"matchList.html\"'>Matches</button><br>",
-				"<button>Predictions</button><br>",
+				"<button onclick='location.href=\"predictionList.html\"'>Predictions</button><br>",
 				"<button>Packages</button><br>",
 				"<button>Clients</button><br>",
 				"<button>Transactions</button><br>",
