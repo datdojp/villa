@@ -24,13 +24,13 @@
 		}
 	</script>
 	<br>
-	Begin post<input type='text' id="beginpost">
-	Hour:<input type='text' style='width:30px'/>
-	Min:<input type='text' style='width:30px'/>
+	Begin post<input type='text' id="beginpost" value='02/11/2011'>
+	Hour:<input type='text' style='width:30px' value='19'/>
+	Min:<input type='text' style='width:30px' value='30'/>
 	<br>
-	End post<input type='text' id="endpost">
-	Hour:<input type='text' style='width:30px'/>
-	Min:<input type='text' style='width:30px'/>
+	End post<input type='text' id="endpost" value='02/14/2011'>
+	Hour:<input type='text' style='width:30px' value='19'/>
+	Min:<input type='text' style='width:30px' value='30'/>
 	<script>
 		$("#beginpost").datepicker();
 		$("#endpost").datepicker();
@@ -38,23 +38,23 @@
 	<br>
 	Price type	
 	<input type='radio' name='pricetype'>Free</input>
-	<input type='radio' name='pricetype'>King</input>
+	<input type='radio' name='pricetype' checked='checked'>King</input>
 	<input type='radio' name='pricetype'>Occean</input>
 	<br>
 	<div class='winner'>
 		Winner			
 		<input type='radio' name='radioWinner'>Manchester United</input>
-		<input type='radio' name='radioWinner'>Chelsea</input>
+		<input type='radio' name='radioWinner' checked='checked'>Chelsea</input>
 	</div>
 	<div class='overlower'>
 		Over/lower		
 		<input type='radio' name='radioOverlower'>Over</input>
-		<input type='radio' name='radioOverlower'>Lower</input>
+		<input type='radio' name='radioOverlower' checked='checked'>Lower</input>
 		<br>
 		Total score
-		<input type='text' style='width:30px;' class='overlower'/>
+		<input type='text' style='width:30px;' class='overlower' value='2'/>
 	</div>
-	<button onclick='location.href="matchDetail.html"'>Create</button>
+	<button onclick='location.href="matchDetail.html"'>Save</button>
 	<button onclick='location.href="matchDetail.html"'>Cancel</button>
 	<script>
 		onSelectWinner();
