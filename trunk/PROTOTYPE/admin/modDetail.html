@@ -1,0 +1,22 @@
+<html>
+<body>
+	<script src='header.js'></script>
+	Username<input type='text' value='binhle'/>
+	<br>
+	Password<input type='text' value='hehehe'/>
+	<br>
+	<input id='isadmin' type='checkbox' checked='checked' onchange='onchange()'/>Admin
+	<br>
+	<button onclick='location.href="modList.html"'>Save</button>
+	<script>
+		function onchange() {
+			if($('#isadmin').checked()) {
+				alert('checked');
+			} else {
+				alert('unchecked');
+			}
+		}
+	</script>
+	<script src='footer.js'></script>
+</body>
+</html>

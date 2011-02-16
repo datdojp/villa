@@ -1,0 +1,65 @@
+<html>
+<body>
+	<script src="jquery-1.4.4.min.js"></script>
+	<script src="jquery-ui-1.8.9.custom.min.js"></script>
+	<script src='header.js'></script>
+	<table border='1'>
+		<tr>
+			<td>
+				<img src='ad_1.gif' onclick='onEdit(1)'/>
+				<br>
+				<button onclick='confirm("Are you sure?")'>Remove</button>
+			</td>
+			<td id='detail' rowspan='4'>
+				
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src='ad_2.gif' onclick='onEdit(2)'/>
+				<br>				
+				<button onclick='confirm("Are you sure?")'>Remove</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<img src='ad_3.gif' onclick='onEdit(3)'/>
+				<br>
+				<button onclick='confirm("Are you sure?")'>Remove</button>
+			</td>
+		</tr>
+		<tr>
+			<td style='height:100px'>
+				<button onclick='onAdd()'>Add</button>
+			</td>
+		</tr>
+	</table>
+	<script>
+		var $detail = $('#detail');
+		function onEdit(idx) {
+			$detail.html([
+				"<img src='ad_", idx, ".gif'/>",
+				"<br>",
+				"Image<input type='file'/>",
+				"<br>",
+				"Link<input type='text' value='http://www.ebet.com'/>",
+				"<br>",
+				"<button onclick='closeDetail()'>Save</button>"].join('')
+			);
+		}
+		function onAdd() {
+			$detail.html([
+				"Image<input type='file'/>",
+				"<br>",
+				"Link<input type='text'/>",
+				"<br>",
+				"<button onclick='closeDetail()'>Add</button>"].join('')
+			);
+		}
+		function closeDetail() {
+			$detail.html('');
+		}
+	</script>
+	<script src='footer.js'></script>
+</body>
+</html>
