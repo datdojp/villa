@@ -1,21 +1,8 @@
 <html>
 <body>
-<script src="jquery-1.4.4.min.js"></script>
-<script src="jquery-ui-1.8.9.custom.min.js"></script>
-<table id="layoutTable" border="1">
-	<tr>
-		<td colspan="3">
-			<script src="header.js"></script>
-		</td>
-	</tr>
-	<tr>
-		<td colspan="3">
-			<script src="menubar.js"></script>			
-		</td>
-	</tr>
-	<tr>
-		<td><script src="leftpane.js"></script></td>
-		<td>
+	<script src="jquery-1.4.4.min.js"></script>
+	<script src="jquery-ui-1.8.9.custom.min.js"></script>
+	<script src='header.js'></script>
 
 <button onclick='generalClick()'>General</button>
 <button onclick='transferDrawClick()'>Transfer/Draw</button>
@@ -102,6 +89,25 @@
 			<td>-</td>
 		</tr>
 	</table>
+	<script src='../common/paging.js'></script>
+	<br>
+	All transactions: 100
+	<br>
+	WIN transactions: 30
+	<br>
+	DRAW/LOOSE transations: 10
+	<br>
+	King prediction transations: 12 $1200
+	<br>
+	Occean prediction transations: 18 $3600
+	<br>
+	King package transactions: 5 $500
+	<br>
+	Occean package transactions: 10 $2000
+	<br>
+	Transferring transaction: 3 $2340
+	<br>
+	Drawing transaction: 1 $1000
 </div>
 <div id="divTransferDraw" style='display:none'>
 	<table border='1'>
@@ -123,7 +129,7 @@
 			<td>Do Van Tien Dat</td>			
 			<td>1234567</td>
 			<td>Smartlink</td>
-			<td>-</td>
+			<td>$<input type='text' value='1000'/><button>Confirm</button></td>
 		</tr>
 		<tr>
 			<td>Feb 01, 2010 - 19:15</td>
@@ -136,6 +142,11 @@
 			<td>Feb 01, 2010 - 11:59</td>
 		</tr>
 	</table>
+	<script src='../common/paging.js'></script>
+	<br>
+	Transferring transaction: 3 $2340
+	<br>
+	Drawing transaction: 1 $1000
 </div>
 <div id="divPredictions" style='display:none'>
 	<table border='1'>
@@ -164,6 +175,15 @@
 			<td>DRAW</td>
 		</tr>
 	</table>
+	<script src='../common/paging.js'></script>
+	<br>
+	WIN transactions: 30
+	<br>
+	DRAW/LOOSE transations: 10
+	<br>
+	King prediction transations: 12 $1200
+	<br>
+	Occean prediction transations: 18 $3600	
 </div>
 <div id="divPackage" style='display:none'>
 	<table border='1'>
@@ -189,17 +209,12 @@
 			<td>1</td>
 		</tr>
 	</table>
+	<script src='../common/paging.js'></script>
+	<br>
+	King package transactions: 5 $500
+	<br>
+	Occean package transactions: 10 $2000
 </div>
-<br>
-<script src='../common/paging.js'></script>
-		</td>
-		<td><script src="rightpane.js"></script></td>
-	</tr>
-	<tr>
-		<td colspan="3">
-			<script src="footer.js"></script>
-		</td>
-	</tr>
-</table>
+		<script src='footer.js'></script>
 </body>
 </html>

@@ -1,0 +1,159 @@
+﻿<html>
+<body>
+Select season
+<select>
+	<option>All</option>
+	<option>2010-2011</option>
+	<option>2011-2012</option>
+</select>
+Select tournament
+<select>
+  <option>All</option>
+  <option>Champain Leage</option>
+  <option>V-leage</option>
+  <option>Asian cup</option>
+</select>
+<br>
+Select team 1
+<select>
+  <option>All</option>
+  <option>Manchester United</option>
+  <option>HAGL FC</option>
+  <option>Japan</option>
+</select>
+Select team 2
+<select>
+  <option>All</option>
+  <option>Manchester United</option>
+  <option>HAGL FC</option>
+  <option>Japan</option>
+</select>
+<br>
+Price type
+<select>
+	<option>All</option>
+	<option>Free</option>
+	<option>King</option>
+	<option>Occean</option>
+</select>
+Prediction type
+<select>
+	<option>All</option>
+	<option>Winner</option>
+	<option>Over/lower</option>
+</select>
+<br>
+<script src='../common/datefilter.js'></script>
+<br>
+<button>Search</button>
+<br><br>
+<script src='balanceinfo.js'></script>
+<br>
+King: $10/prediction
+<br>
+Occean: $20/prediction
+<br><br>
+<button onclick='window.close()'>Buy</button
+<table border='1'>
+	<tr style='font-weight:bold;'>
+		<td><input type='checkbox'/></td>
+		<td>Host team</td>
+		<td>Guest team</td>
+		<td>Handicap</td>
+		<td>Date time</td>
+		<td>Price type</td>
+		<td>Prediction type</td>
+		<td>Winner</td>
+		<td>Total score</td>
+		<td>Over/lower</td>
+		<td>Result</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><input type='checkbox'/></td>
+		<td>Manchester United</td>
+		<td>Chelsea</td>
+		<td>1/2-0</td>
+		<td>19:00 Feb 12, 2010</td>
+		<td>King</td>
+		<td>Winner</td>
+		<td>Manchester United</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><input type='checkbox'/></td>
+		<td>Vietnam</td>
+		<td>Thailand</td>
+		<td>4 1/2-0</td>
+		<td>19:30 Feb 13, 2010</td>
+		<td>Free</td>
+		<td>Over/lower</td>
+		<td>-</td>
+		<td>10</td>
+		<td>Over</td>
+		<td>-</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><input type='checkbox'/></td>
+		<td>Villa</td>
+		<td>Ailato</td>
+		<td>1/2-0</td>
+		<td>19:00 Feb 12, 2010</td>
+		<td>King</td>
+		<td>Winner</td>
+		<td>Ailato</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td></td>
+	</tr>
+	<tr>
+		<td><input type='checkbox' disabled='true'/></td>
+		<td>Barca</td>
+		<td>Real Madrid</td>
+		<td>1/2-0</td>
+		<td>20:00 Feb 14, 2010</td>
+		<td>Occean</td>
+		<td>Winner</td>
+		<td>Real Madrid</td>
+		<td>-</td>
+		<td>-</td>
+		<td>-</td>
+		<td>Not enough money</td>
+	</tr>
+	<tr>
+		<td><input type='checkbox' disabled='true'/></td>
+		<td>Inter miland</td>
+		<td>HAGL FC</td>
+		<td>0-1 1/2</td>
+		<td>18:30 March 20, 2010</td>
+		<td>King</td>
+		<td>Over/lower</td>
+		<td>-</td>
+		<td>4</td>
+		<td>Lower</td>
+		<td>WIN</td>
+		<td>Bought</td>
+	</tr>
+	<tr>
+		<td><input type='checkbox' disabled='true'/></td>
+		<td>Arab Saudi</td>
+		<td>Japan</td>
+		<td>0-2 1/2</td>
+		<td>19:00 March 20, 2010</td>
+		<td>Occean</td>
+		<td>Winner</td>
+		<td>Japan</td>
+		<td>-</td>
+		<td>-</td>
+		<td>DRAW</td>
+		<td>Ended</td>
+	</tr>
+</table>
+<script src='../common/paging.js'></script>
+</body>
+</html>

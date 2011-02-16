@@ -1,0 +1,59 @@
+<html>
+<body>
+	<script src="jquery-1.4.4.min.js"></script>
+	<script src="jquery-ui-1.8.9.custom.min.js"></script>
+	<script src='header.js'></script>
+	Account number:<b>4893483<b/>
+	<br>
+	Username:<b>datdvt</>
+	<br>
+	Email: <input type='text' value='datdvt@gmail.com'/>
+	<br>
+	Phone number:<input type='text' value='0988959400'/>
+	<br>
+	Bank account number:<input type='text' value='564545452'/>
+	<br>
+	Bank name:<input type='text' value='ACB'/>
+	<br>
+	Bank type:
+	<select>
+		<option>Visa card</option>
+		<option>Smartlink</option>
+		<option>Credit card</option>
+		<option>Paypal</option>
+	</select>
+	<br>
+	Fullname:<input type='text' value='Do Van Tien Dat'/>
+	<br>
+	Date of birth<input type='text' id='dateofbirth' value='03/19/1986'/>
+	<script>
+		$('#dateofbirth').datepicker();
+	</script>
+	<br>
+	ID card:<input type='text' value='52454254354'/>
+	<br>
+	Balance: $350
+	<br>
+	King predictions: 12
+	<br>
+	Occean predictions: 15
+	<br>
+	Activated: yes
+	<br>
+	Timezone
+	<script src='../common/timezone.js'></script>
+	<br>
+	<input type='checkbox'>Locked</input>
+	<br>
+	<button onclick='location.href="userList.html"'>Save</button>
+	<button onclick='if(confirm("Are you sure?"))location.href="userList.html"'>Reset password</button>	
+	<br>
+	<button onclick='window.open("popupAddPrediction.html")'>Add prediction</button>
+	<button onclick='window.open("popupPredictionList.html")'>Buy prediction</button>
+	<button onclick='window.open("popupPackageList.html")'>Buy package</button>	
+	<br>
+	<br>
+	
+	<script src='footer.js'></script>
+</body>
+</html>
