@@ -1,5 +1,7 @@
 <html>
 <body>
+	<script src="jquery-1.4.4.min.js"></script>
+	<script src="jquery-ui-1.8.9.custom.min.js"></script>
 	<script src='header.js'></script>
 	From<input type='text' value='2010'/><br>
 	To<input type='text' value='2011'/><br>
@@ -15,22 +17,121 @@
 		}
 	</script>
 	<button onclick="confirm('Are you sure?');">Remove</button>
-	<table border='1'>
+	<style>
+		#tournaments td {
+			vertical-align: top;
+		}
+	</style>
+	<table border='1' id='tournaments'>
 		<tr style='font-weight:bold'>
 			<td><input type='checkbox'/></td>
 			<td>Name</td>
+			<td>Teams</td>
 		</tr>
 		<tr>
 			<td><input type='checkbox'/></td>
-			<td>Champain League</td>			
+			<td><a href='tournamentDetail.html'>Champain League</a></td>
+			<td>
+				<button id='expand1' onclick='expand1()'>Expand</button>
+				<button id='collapse1' onclick='collapse1()' style='display:none'>Collapse</button>
+				<script>
+					function expand1() {						
+						$('#expand1').css('display', 'none');						
+						$('#collapse1').css('display', '');						
+						$('#tour1').css('display', '');						
+					}
+					function collapse1() {
+						$('#expand1').css('display', '');
+						$('#collapse1').css('display', 'none');
+						$('#tour1').css('display', 'none');
+					}
+				</script>
+				<div id='tour1' style='display:none'>
+					<a href='teamDetail.html'>Manchester United</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>Chelsea</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>Arsenal</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>Aston Villa</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<button onclick='window.open("popupTeamList.html")'>add</button>
+				</div>
+			</td>
 		</tr>
 		<tr>
 			<td><input type='checkbox'/></td>
-			<td>V-Leage</td>			
+			<td><a href='tournamentDetail.html'>V-Leage</a></td>
+			<td>
+				<button id='expand2' onclick='expand2()'>Expand</button>
+				<button id='collapse2' onclick='collapse2()' style='display:none'>Collapse</button>
+				<script>
+					function expand2() {						
+						$('#expand2').css('display', 'none');						
+						$('#collapse2').css('display', '');						
+						$('#tour2').css('display', '');						
+					}
+					function collapse2() {
+						$('#expand2').css('display', '');
+						$('#collapse2').css('display', 'none');
+						$('#tour2').css('display', 'none');
+					}
+				</script>
+				<div id='tour2' style='display:none'>
+					<a href='teamDetail.html'>Song lam nghe an</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>gach Dong Tam</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>Hoang Anh Gia Lai</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>T&amp;T</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<button onclick='window.open("popupTeamList.html")'>add</button>
+				</div>
+			</td>
 		</tr>
 		<tr>
 			<td><input type='checkbox'/></td>
-			<td>Worlcup</td>			
+			<td><a href='tournamentDetail.html'>Worlcup</a></td>
+			<td>
+				<button id='expand3' onclick='expand3()'>Expand</button>
+				<button id='collapse3' onclick='collapse3()' style='display:none'>Collapse</button>
+				<script>
+					function expand3() {						
+						$('#expand3').css('display', 'none');						
+						$('#collapse3').css('display', '');						
+						$('#tour3').css('display', '');						
+					}
+					function collapse3() {
+						$('#expand3').css('display', '');
+						$('#collapse3').css('display', 'none');
+						$('#tour3').css('display', 'none');
+					}
+				</script>
+				<div id='tour3' style='display:none'>
+					<a href='teamDetail.html'>Japan</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>Enland</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>Brazil</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<a href='teamDetail.html'>Spain</a>
+					<button onclick='confirm("Do you want to remove this team?")'>x</button>
+					<br>
+					<button onclick='window.open("popupTeamList.html")'>add</button>
+				</div>
+			</td>
 		</tr>
 	</table>
 	<script src='footer.js'></script>
