@@ -18,7 +18,8 @@
 		<td>
 This function allows you to notify administrator that you have transfer money to his bank account.
 <br>
-Date<input type='text' id="datetime"/>Hour:<input type='text' style='width:20px'/>Min:<input type='text' style='width:20px'/>
+Date<input type='text' id="datetime"/>
+<script src='../common/hourselect.js'></script>
 <script>
 	$("#datetime").datepicker();
 </script>
@@ -29,12 +30,8 @@ Tranferer<input type='text' value='Do Van Tien Dat'/>
 <br>
 Bank account number<input type="text" value='1234567'/><br>
 <br>
-Bank type
-<select>
-  <option>Visa card</option>
-  <option>Smartlink</option>
-  <option>Direct transfer</option>
-</select><br>
+Bank name<input type='text' value='ACB'/>
+<br>
 Amount: $<input type='text'/>
 <br>
 <button onclick='location.href="notifyDone.html"'>Notify</button>
