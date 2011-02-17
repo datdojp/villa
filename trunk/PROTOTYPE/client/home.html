@@ -15,40 +15,33 @@
 	</tr>
 	<tr>
 		<td><script src="leftpane.js"></script></td>
-		<td>
-Select season
-<select>
-	<option>All</option>
-	<option>2010-2011</option>
-	<option>2011-2012</option>
-</select>
-Select tournament
-<select>
-  <option>All</option>
-  <option>Champain Leage</option>
-  <option>V-leage</option>
-  <option>Asian cup</option>
-</select>
+	<td>
+<script src='../common/statistics.js'></script>
+<script src='../common/paging.js'></script>
 <br>
-Select team 1
-<select>
-  <option>All</option>
-  <option>Manchester United</option>
-  <option>HAGL FC</option>
-  <option>Japan</option>
-</select>
-Select team 2
-<select>
-  <option>All</option>
-  <option>Manchester United</option>
-  <option>HAGL FC</option>
-  <option>Japan</option>
-</select>
 <br>
+<div id='advance' style='display:none'>
+	Select tournament
+	<select>
+	  <option>All</option>
+	  <option>Champain Leage</option>
+	  <option>V-leage</option>
+	  <option>Asian cup</option>
+	</select>
+	<br>
+	Select team
+	<select>
+	  <option>All</option>
+	  <option>Manchester United</option>
+	  <option>HAGL FC</option>
+	  <option>Japan</option>
+	</select>
+	<br>
+</div>
+
 Price type
 <select>
 	<option>All</option>
-	<option>Free</option>
 	<option>King</option>
 	<option>Occean</option>
 </select>
@@ -59,9 +52,24 @@ Prediction type
 	<option>Over/lower</option>
 </select>
 <br>
-<script src='../common/datefilter.js'></script>
+From<script src='../common/hourselect.js'></script>
+To<script src='../common/hourselect.js'></script>
 <br>
 <button>Search</button>
+<a href='javascript:advance()' id='advanceLink'>Advanced search</a>
+<a href='javascript:basic()' id='basicLink' style='display:none'>Basic search</a>
+<script>
+	function advance() {
+		$('#advance').css('display', '');
+		$('#advanceLink').css('display', 'none');
+		$('#basicLink').css('display', '');
+	}
+	function basic() {
+		$('#advance').css('display', 'none');
+		$('#advanceLink').css('display', '');
+		$('#basicLink').css('display', 'none');
+	}
+</script>
 <br><br>
 <script src='balanceinfo.js'></script>
 <br>
@@ -77,10 +85,6 @@ Occean: $20/prediction
 		<td>Date time</td>
 		<td>Price type</td>
 		<td>Prediction type</td>
-		<td>Winner</td>
-		<td>Total score</td>
-		<td>Over/lower</td>
-		<td>Result</td>
 		<td></td>
 	</tr>
 	<tr>
@@ -90,10 +94,6 @@ Occean: $20/prediction
 		<td>19:00 Feb 12, 2010</td>
 		<td>King</td>
 		<td>Winner</td>
-		<td>Manchester United</td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
 		<td><button onclick='confirmBuyView()'>Buy</button></td>
 	</tr>
 	<tr>
@@ -101,13 +101,9 @@ Occean: $20/prediction
 		<td>Thailand</td>
 		<td>4 1/2-0</td>
 		<td>19:30 Feb 13, 2010</td>
-		<td>Free</td>
+		<td>King</td>
 		<td>Over/lower</td>
-		<td>-</td>
-		<td>10</td>
-		<td>Over</td>
-		<td>-</td>
-		<td><button onclick='location.href="predictionDetail.html"'>View</button></td>
+		<td><button onclick='confirmBuyView()'>Buy</button></td>
 	</tr>
 	<tr>
 		<td>Villa</td>
@@ -116,10 +112,6 @@ Occean: $20/prediction
 		<td>19:00 Feb 12, 2010</td>
 		<td>King</td>
 		<td>Winner</td>
-		<td>Ailato</td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
 		<td><button onclick='confirmBuyView()'>Buy</button></td>
 	</tr>
 	<tr>
@@ -129,11 +121,7 @@ Occean: $20/prediction
 		<td>20:00 Feb 14, 2010</td>
 		<td>Occean</td>
 		<td>Winner</td>
-		<td>Real Madrid</td>
-		<td>-</td>
-		<td>-</td>
-		<td>-</td>
-		<td>Not enough money</td>
+		<td style='color:red; font-weight:bold'>Not enough money</td>
 	</tr>
 	<tr>
 		<td>Inter miland</td>
@@ -142,10 +130,6 @@ Occean: $20/prediction
 		<td>18:30 March 20, 2010</td>
 		<td>King</td>
 		<td>Over/lower</td>
-		<td>-</td>
-		<td>4</td>
-		<td>Lower</td>
-		<td>WIN</td>
 		<td>Bought</td>
 	</tr>
 	<tr>
@@ -155,11 +139,7 @@ Occean: $20/prediction
 		<td>19:00 March 20, 2010</td>
 		<td>Occean</td>
 		<td>Winner</td>
-		<td>Japan</td>
-		<td>-</td>
-		<td>-</td>
-		<td>DRAW</td>
-		<td>Ended</td>
+		<td>Bought</td>
 	</tr>
 </table>
 <script src='../common/paging.js'></script>

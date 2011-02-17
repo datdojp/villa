@@ -2,7 +2,7 @@ document.write([
 	"WIN: 3<br>",
 	"LOOSE: 1<br>",
 	"DRAW: 2<br>",
-	"WINNING RATE = 0.5<br>",
+	"WINNING RATE = 50%<br>",
 	"<table border='1'>",
 		"<tr style='font-weight:bold;'>",
 			"<td>Host team</td>",
