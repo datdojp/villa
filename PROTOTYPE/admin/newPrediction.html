@@ -25,12 +25,10 @@
 	</script>
 	<br>
 	Begin post<input type='text' id="beginpost">
-	Hour:<input type='text' style='width:30px'/>
-	Min:<input type='text' style='width:30px'/>
+	<script src='../common/hourselect.js'></script>
 	<br>
 	End post<input type='text' id="endpost">
-	Hour:<input type='text' style='width:30px'/>
-	Min:<input type='text' style='width:30px'/>
+	<script src='../common/hourselect.js'></script>
 	<script>
 		$("#beginpost").datepicker();
 		$("#endpost").datepicker();
@@ -52,7 +50,7 @@
 		<input type='radio' name='radioOverlower'>Lower</input>
 		<br>
 		Total score
-		<input type='text' style='width:30px;' class='overlower'/>
+		<script src='../common/totalscoreselect.js'></script>
 	</div>
 	<button onclick='location.href="matchDetail.html"'>Create</button>
 	<button onclick='location.href="matchDetail.html"'>Cancel</button>
