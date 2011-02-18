@@ -2,5 +2,5 @@ package villa.bean;
 
 import java.io.Serializable;
 
-public class BaseBean implements Serializable {
+public abstract class BaseBean implements Serializable {
 }

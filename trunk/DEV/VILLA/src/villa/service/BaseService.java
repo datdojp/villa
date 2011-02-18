@@ -1,5 +1,7 @@
 package villa.service;
 
-public class BaseService {
+import java.io.Serializable;
+
+public abstract class BaseService implements Serializable {
 
 }
