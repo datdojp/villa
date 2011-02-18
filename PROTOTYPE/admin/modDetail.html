@@ -1,22 +1,53 @@
 <html>
 <body>
+	<script src="jquery-1.4.4.min.js"></script>
+	<script src="jquery-ui-1.8.9.custom.min.js"></script>
 	<script src='header.js'></script>
 	Username<input type='text' value='binhle'/>
 	<br>
 	Password<input type='text' value='hehehe'/>
 	<br>
-	<input id='isadmin' type='checkbox' checked='checked' onchange='onchange()'/>Admin
+	<input id='isadmin' type='checkbox' onchange='onchange()'/>Admin
 	<br>
-	<button onclick='location.href="modList.html"'>Save</button>
 	<script>
 		function onchange() {
-			if($('#isadmin').checked()) {
-				alert('checked');
+			if(document.getElementById("isadmin").checked) {
+				$("#rights").css('display', 'none');
 			} else {
-				alert('unchecked');
+				$("#rights").css('display', '');
 			}
 		}
 	</script>
+	<div id='rights'>
+		<table border='1'>
+			<tr>
+				<td><input type='checkbox'/></td>
+				<td>Right</td>
+				
+			</tr>
+			<tr>
+				<td><input type='checkbox'/></td>
+				<td>Season management</td>				
+			</tr>
+			<tr>
+				<td><input type='checkbox'/></td>
+				<td>Match management</td>				
+			</tr>
+			<tr>
+				<td><input type='checkbox'/></td>
+				<td>Prediction management</td>				
+			</tr>
+			<tr>
+				<td><input type='checkbox'/></td>
+				<td>Package management</td>				
+			</tr>
+			<tr>
+				<td><input type='checkbox'/></td>
+				<td>Policy defining</td>				
+			</tr>
+		</table>
+	</div>
+	<button onclick='location.href="modList.html"'>Save</button>
 	<script src='footer.js'></script>
 </body>
 </html>

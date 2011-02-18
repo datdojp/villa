@@ -55,8 +55,8 @@ document.write([
 				"<button onclick='location.href=\"noticeList.html\"'>Notices</button><br>",
 				"<button onclick='location.href=\"adList.html\"'>Advertisements</button><br>",
 				"<button onclick='location.href=\"modList.html\"'>Moderators</button><br>",
-				"<button>VIPs</button><br>",
-				"<button>Configurations</button><br>",
+				"<button onclick='location.href=\"vipList.html\"'>VIPs</button><br>",
+				"<button onclick='location.href=\"policies.html\"'>Policies</button><br>",
 				"<button onclick='location.href=\"statistics.html\"'>Statistics</button><br>",
 			"</td>",
 			"<td style='width:920px; vertical-align:top'>"

@@ -1,6 +1,6 @@
 document.write(
 	[
-		"MENU",
+		"<b>MENU</b>",
 		"<br>",
 		"<button onclick='location.href=\"packageList.html\"'>Buy package</button>",
 		"<br>",
@@ -13,7 +13,13 @@ document.write(
 		"<button onclick='location.href=\"statistics.html\"'>Statistics</button>",
 		"<br>",
 		"<br>",
-		"SUPPORTERS",
+		"<b>NOTICE</b>",
+		"<div style='border:1;background-color:yellow;width:150px;'>",
+			"Add 10 King predictions to all VIP accounts",
+		"</div>",
+		"<br>",
+		"<br>",
+		"<b>SUPPORTERS</b>",
 		"<br>",
 		"<img src='yahooonline.gif'/>anh Binh",
 		"<br>",
