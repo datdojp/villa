@@ -8,7 +8,7 @@ import javax.persistence.MappedSuperclass;
 import javax.persistence.Version;
 
 @MappedSuperclass
-public class BaseDto implements Serializable {
+public abstract class BaseDto implements Serializable {
 	@Id @GeneratedValue
 	@Column(name="id")
 	private Integer m_id;
